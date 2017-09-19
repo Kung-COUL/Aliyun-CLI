@@ -1,7 +1,7 @@
-COUL.io
-CentOS
+##COUL.io
+##CentOS
 
-running cmd1 prepares httpd, php, mysql
+running *cmd1* prepares httpd, php, mysql
 
 after running cmd1, user needs to download Magento 2 to home directory
 
