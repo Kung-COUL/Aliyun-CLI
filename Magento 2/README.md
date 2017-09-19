@@ -1,5 +1,5 @@
 COUL.io  
-##CentOS
+## CentOS
 
 running *cmd1* prepares httpd, php, mysql
 
