@@ -1,0 +1,15 @@
+#After setting up admin info using setup wizard
+
+cat >> /var/spool/cron/magento <<EOL
+* * * * * /bin/php /var/www/html/coul.io/public_html/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /var/www/html/coul.io/public_html/var/log/magento.cron.log
+* * * * * /bin/php /var/www/html/coul.io/public_html/update/cron.php >> /var/www/html/coul.io/public_html/var/log/update.cron.log
+* * * * * /bin/php /var/www/html/coul.io/public_html/bin/magento setup:cron:run >> /var/www/html/coul.io/public_html/var/log/setup.cron.log
+EOL
+
+sed -i 's/SAMEORIGIN/DENY/g' /var/www/html/coul.io/public_html/app/etc/env.php
+
+
+cd /var/www/html/coul.io/public_html/
+sudo find app/etc -type f -exec chmod g-w {} \;
+sudo find app/etc -type d -exec chmod g-ws {} \;
+

@@ -1,0 +1,60 @@
+
+#yum -y install epel-release
+yum -y update --skip-broken
+
+yum -y install httpd mod_ssl
+
+mkdir /var/www/html/coul.io
+mkdir /var/www/html/coul.io/logs
+
+cat >> /etc/httpd/conf.d/vhost.conf <<EOL
+<Directory /var/www/html/coul.io/public_html>
+    Require all granted
+</Directory>
+<VirtualHost *:80>
+    ServerName coul.io
+    ServerAlias www.coul.io
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/html/coul.io/public_html
+
+    ErrorLog /var/www/html/coul.io/logs/error.log
+    CustomLog /var/www/html/coul.io/logs/access.log combined
+
+    <Directory /var/www/html/coul.io/public_html>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+    </Directory>
+
+</VirtualHost>
+EOL
+
+systemctl start httpd
+systemctl enable httpd
+
+
+wget http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm -P /tmp
+yum -y localinstall /tmp/ius-release-1.0-14.ius.centos7.noarch.rpm
+yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-json php70u-iconv
+
+
+wget http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm -P /tmp/
+yum -y localinstall /tmp/mysql57-community-release-el7-7.noarch.rpm
+yum -y install mysql-community-server
+mkdir /var/log/php
+chown apache /var/log/php
+
+
+systemctl start mysqld
+systemctl enable mysqld
+
+mkdir /var/www/html/coul.io/public_html
+
+cat <<EOL
+#Download Magento to home directory
+#sudo grep 'temporary password' /var/log/mysqld.log
+#mysql_secure_installation
+#mysql -u root -p
+#CREATE DATABASE magento;
+#CREATE USER 'magento' IDENTIFIED BY 'P@ssword1';
+#GRANT ALL PRIVILEGES ON magento.* TO 'magento';
+EOL
