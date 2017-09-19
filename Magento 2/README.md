@@ -1,4 +1,4 @@
-##COUL.io
+COUL.io  
 ##CentOS
 
 running *cmd1* prepares httpd, php, mysql
