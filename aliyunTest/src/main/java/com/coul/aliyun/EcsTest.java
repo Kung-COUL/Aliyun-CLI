@@ -1,4 +1,4 @@
-package com.cc.test.aliyun;
+package com.coul.aliyun;
 
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
