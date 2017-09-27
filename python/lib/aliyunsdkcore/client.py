@@ -181,10 +181,10 @@ class AcsClient:
                 raise ClientException(
                     error_code.SDK_INVALID_REGION_ID,
                     error_msg.get_msg('SDK_INVALID_REGION_ID'))
-            if not isinstance(request, AcsRequest):
-                raise ClientException(
-                    error_code.SDK_INVALID_REQUEST,
-                    error_msg.get_msg('SDK_INVALID_REQUEST'))
+            # if not isinstance(request, AcsRequest):
+                # raise ClientException(
+                # error_code.SDK_INVALID_REQUEST,
+                # error_msg.get_msg('SDK_INVALID_REQUEST'))
         return endpoint
 
     def _make_http_response(self, endpoint, request):
@@ -293,4 +293,3 @@ class AcsClient:
             "get_response() method is deprecated, please use do_action_with_exception() instead.",
             DeprecationWarning)
         return self._implementation_of_do_action(acs_request)
-
