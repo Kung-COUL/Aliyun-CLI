@@ -25,7 +25,7 @@
 
 	sed -i.bak -e '184,187d' lib/aliyunsdkcore/client.py
 
-Removed Code
+#Removed Code
 
 自带的 python2.7.5 已经够用
  1 安装python2.7.X(命令）
