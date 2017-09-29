@@ -34,11 +34,11 @@
 	cd ~/aliyun-cli/python
 	pip install aliyun-python-sdk-core --target=lib
  	pip install aliyun-python-sdk-ecs --target=lib
+	sed -i.bak -e '184,187d' lib/aliyunsdkcore/client.py
 	touch lib/__init__.py 
 	touch properties.json
 	vi properties.json
 
-	sed -i.bak -e '184,187d' lib/aliyunsdkcore/client.py
 
 
 
