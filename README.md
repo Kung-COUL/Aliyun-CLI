@@ -24,7 +24,7 @@ Commented out lib/aliyunsdkcore/client.py line 184 to 187
 
  	wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-12.0.3.tar.gz#md5=f07e4b0f4c1c9368fcd980d888b29a65
  	tar -zxvf setuptools-12.0.3.tar.gz
- 	cd setuptools=12.0.3
+ 	cd setuptools-12.0.3
  	python setup.py install
  	验证是否安装成功 easy_install --help 
  
