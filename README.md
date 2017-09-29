@@ -30,10 +30,6 @@ Commented out lib/aliyunsdkcore/client.py line 184 to 187
  
  验证是否安装成功 easy_install --help 
  
-3 安装pip
-
-  	curl https://bootstrap.pypa.io/get-pip.py | python2.7 -
- 
 4 安装python环境依赖
 
 	yum install python-devel
