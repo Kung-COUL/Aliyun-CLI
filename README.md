@@ -27,7 +27,7 @@
 
 
 
-
+# 一口气
 ---
 
 	yum install git -y
@@ -41,7 +41,7 @@
 	touch properties.json
 	vi properties.json
 
----
+
 
 
 
