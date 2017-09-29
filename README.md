@@ -21,13 +21,15 @@
 	touch properties.json
 	vi properties.json
 
-5 Commented out lib/aliyunsdkcore/client.py line 184 to 187
+5 Commented out lib/aliyunsdkcore/client.py line 184 to 187, make bak file client.py.bak
 
+	sed -i.bak -e '184,187d' lib/aliyunsdkcore/client.py
 
 Removed Code
 
+自带的 python2.7.5 已经够用
+ 1 安装python2.7.X(命令）
 
- 安装python2.7.X(命令）
 
 	yum groupinstall -y 'development tools'
 	yum install -y zlib-devel bzip2-devel openssl-devel xz-libs wget
@@ -40,7 +42,7 @@ Removed Code
  
  验证 python2.7 -V
  
- 
+不需要用到吧
  2 安装setuptools （命令）
 
  	wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-12.0.3.tar.gz#md5=f07e4b0f4c1c9368fcd980d888b29a65
