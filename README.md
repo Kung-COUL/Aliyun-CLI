@@ -37,6 +37,6 @@ Commented out lib/aliyunsdkcore/client.py line 184 to 187
 5 安装aliyun相关sdk(core 和ecs)
 
 	cd ~/aliyun-cli/python
-	pip install aliyun-python-sdk-core --target=.
- 	pip install aliyun-python-sdk-ecs --target=.
+	pip install aliyun-python-sdk-core --target=lib
+ 	pip install aliyun-python-sdk-ecs --target=lib
 	
