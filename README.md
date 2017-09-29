@@ -32,7 +32,7 @@ Commented out lib/aliyunsdkcore/client.py line 184 to 187
  
 4 安装python环境依赖
 
-	yum install python-devel
+	yum install python-devel -y
 
 5 安装aliyun相关sdk(core 和ecs)
 
