@@ -1,8 +1,6 @@
-Mou# Aliyun-CLI
-
-每个文件夹是一个独立的服务器群脚本  
 
 pip install aliyun-python-sdk-core --target=lib
+
 pip install aliyun-python-sdk-ecs --target=lib
 
 Commented out lib/aliyunsdkcore/client.py line 184 to 187
@@ -10,14 +8,7 @@ Commented out lib/aliyunsdkcore/client.py line 184 to 187
 项目环境搭建
 
  
-2 安装setuptools （命令）
 
- 	wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-12.0.3.tar.gz#md5=f07e4b0f4c1c9368fcd980d888b29a65
- 	tar -zxvf setuptools-12.0.3.tar.gz
- 	cd setuptools-12.0.3
- 	python setup.py install
- 
- 验证是否安装成功 easy_install --help 
  
 4 安装python环境依赖
 
@@ -46,3 +37,13 @@ Commented out lib/aliyunsdkcore/client.py line 184 to 187
 	make && make altinstall
  
  验证 python2.7 -V
+ 
+ 
+ 2 安装setuptools （命令）
+
+ 	wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-12.0.3.tar.gz#md5=f07e4b0f4c1c9368fcd980d888b29a65
+ 	tar -zxvf setuptools-12.0.3.tar.gz
+ 	cd setuptools-12.0.3
+ 	python setup.py install
+ 
+ 验证是否安装成功 easy_install --help 
