@@ -22,11 +22,11 @@ Commented out lib/aliyunsdkcore/client.py line 184 to 187
  
 2 安装setuptools （命令）
 
- 	2.1 wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-12.0.3.tar.gz#md5=f07e4b0f4c1c9368fcd980d888b29a65
- 	2.2 tar -zxvf setuptools-12.0.3.tar.gz
- 	2.3 cd setuptools=12.0.3
- 	2.4 python setup.py install
- 	2.5 验证是否安装成功 easy_install --help 
+ 	wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-12.0.3.tar.gz#md5=f07e4b0f4c1c9368fcd980d888b29a65
+ 	tar -zxvf setuptools-12.0.3.tar.gz
+ 	cd setuptools=12.0.3
+ 	python setup.py install
+ 	验证是否安装成功 easy_install --help 
  
 3 安装pip
 
