@@ -19,6 +19,7 @@
 4 touch properties.json
 
 	touch properties.json
+	vi properties.json
 
 5 Commented out lib/aliyunsdkcore/client.py line 184 to 187
 
