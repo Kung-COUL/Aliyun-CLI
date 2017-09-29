@@ -14,6 +14,7 @@
 	cd ~/aliyun-cli/python
 	pip install aliyun-python-sdk-core --target=lib
  	pip install aliyun-python-sdk-ecs --target=lib
+	touch lib/__init__.py
 	
 4 touch properties.json
 
