@@ -18,7 +18,8 @@ Commented out lib/aliyunsdkcore/client.py line 184 to 187
 	cd Python-2.7.12
 	./configure --prefix=/usr/local
 	make && make altinstall
- 	验证 python2.7 -V
+ 
+ 验证 python2.7 -V
  
 2 安装setuptools （命令）
 
@@ -26,7 +27,8 @@ Commented out lib/aliyunsdkcore/client.py line 184 to 187
  	tar -zxvf setuptools-12.0.3.tar.gz
  	cd setuptools-12.0.3
  	python setup.py install
- 	验证是否安装成功 easy_install --help 
+ 
+ 验证是否安装成功 easy_install --help 
  
 3 安装pip
 
