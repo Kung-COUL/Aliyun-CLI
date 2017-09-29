@@ -7,22 +7,28 @@ Commented out lib/aliyunsdkcore/client.py line 184 to 187
 
 项目环境搭建
 
- 
+1 install git to clone aliyun-cli from github
+	
+	yum install git -y
+	git clone https://github.com/Kung-COUL/aliyun-cli
 
  
-4 安装python环境依赖
+2 安装python环境依赖
 
 	yum install python-devel -y
 
-5 安装aliyun相关sdk(core 和ecs)
+3 安装aliyun相关sdk(core 和ecs)
 
 	cd ~/aliyun-cli/python
 	pip install aliyun-python-sdk-core --target=lib
  	pip install aliyun-python-sdk-ecs --target=lib
 	
+4 touch properties.json
+
+	touch properties.json
 
 
-#Removed
+Removed Code
 ----
 
  安装python2.7.X(命令）
