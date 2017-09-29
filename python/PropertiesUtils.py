@@ -1,24 +1,27 @@
 import json
 with open('properties.json') as json_data:
-  data = json.load(json_data)
+    data = json.load(json_data)
 
-  def keyPairName():
-    return data['KeyPairName']
+    def keyPairName():
+        return data['KeyPairName']
 
-  def accessKeyId():
-    return data['AccessKeyId']
+    def accessKeyId():
+        return data['AccessKeyId']
 
-  def accessSecret():
-    return data['AccessSecret']
+    def accessSecret():
+        return data['AccessSecret']
 
-  def regionId():
-    return data['RegionId']
+    def regionId():
+        return data['RegionId']
 
-  def outputFormat():
-    return data['OutputFormat']
+    def outputFormat():
+        return data['OutputFormat']
 
-  def instanceId():
-    return data['InstanceId']
+    def instanceId():
+        return data['InstanceId']
 
-  def allocationId():
-    return data['AllocationId']
+    def allocationId():
+        return data['AllocationId']
+
+    def diskId():
+        return data['DiskId']
