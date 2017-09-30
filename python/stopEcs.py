@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-#coding=utf-8
-#pip install aliyun-python-sdk-core --target=.
-#pip install aliyun-python-sdk-ecs --target=.
+# coding=utf-8
+# pip install aliyun-python-sdk-core --target=.
+# pip install aliyun-python-sdk-ecs --target=.
 
 from lib.aliyunsdkcore import client
 from lib.aliyunsdkecs.request.v20140526 import StopInstanceRequest
@@ -20,6 +20,10 @@ def doIt():
     # 发起请求
     response = clt.do_action_with_exception(request)
 
-# 输出结果
+    # 输出结果
+    if __name__ == "__main__":
+        print response
+
+
 if __name__ == "__main__":
-    print response
+    doIt()
