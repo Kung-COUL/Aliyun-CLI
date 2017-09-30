@@ -1,5 +1,3 @@
-项目环境搭建
-
 1 install git to clone aliyun-cli from github
 	
 	yum install git -y
@@ -25,11 +23,11 @@
 
 	sed -i.bak -e '184,187d' lib/aliyunsdkcore/client.py
 	sed -i.bak -e '281,283d' lib/aliyunsdkcore/client.py
+  
 
 
-
-# script
----
+Script
+===
 
 	yum install git -y
 	git clone https://github.com/Kung-COUL/aliyun-cli
@@ -45,14 +43,8 @@
 
 
 
-
-
-
-
-
-
-# Removed Code
-
+Removed Code
+===
 
 ## 自带的 python2.7.5 已经够用
 
