@@ -3,8 +3,8 @@
 #pip install aliyun-python-sdk-core --target=.
 #pip install aliyun-python-sdk-ecs --target=.
 
-from aliyunsdkcore import client
-from aliyunsdkecs.request.v20140526 import StopInstanceRequest
+from lib.aliyunsdkcore import client
+from lib.aliyunsdkecs.request.v20140526 import StopInstanceRequest
 import PropertiesUtils as p
 
 clt = client.AcsClient(p.accessKeyId(), p.accessSecret(), p.regionId())

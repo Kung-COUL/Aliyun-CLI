@@ -1,45 +1,74 @@
-Mou# Aliyun-CLI
+1 install git to clone aliyun-cli from github
+	
+	yum install git -y
+	git clone https://github.com/Kung-COUL/aliyun-cli
+ 
+2 安装python环境依赖
 
-每个文件夹是一个独立的服务器群脚本  
+	yum install python-devel -y
 
-pip install aliyun-python-sdk-core --target=lib
-pip install aliyun-python-sdk-ecs --target=lib
+3 安装aliyun相关sdk(core 和ecs)
 
-Commented out lib/aliyunsdkcore/client.py line 184 to 187
+	cd ~/aliyun-cli/python
+	pip install aliyun-python-sdk-core --target=lib
+ 	pip install aliyun-python-sdk-ecs --target=lib
+	touch lib/__init__.py
+	
+4 touch properties.json
 
-项目环境搭建
-1 安装python2.7.X(命令）
+	touch properties.json
+	vi properties.json
 
-    yum groupinstall -y 'development tools'
+5 Commented out lib/aliyunsdkcore/client.py line 184 to 187, make bak file client.py.bak
+
+	sed -i.bak -e '184,187d' lib/aliyunsdkcore/client.py
+	sed -i.bak -e '281,283d' lib/aliyunsdkcore/client.py
+  
+
+
+Script
+===
+
+	yum install git -y
+	git clone https://github.com/Kung-COUL/aliyun-cli
+	yum install python-devel -y
+	cd ~/aliyun-cli/python
+	pip install aliyun-python-sdk-core --target=lib
+ 	pip install aliyun-python-sdk-ecs --target=lib
+	sed -i.bak -e '184,187d' lib/aliyunsdkcore/client.py
+	sed -i.bak -e '281,283d' lib/aliyunsdkcore/client.py
+	touch lib/__init__.py 
+	touch properties.json
+	vi properties.json
+
+
+
+Removed Code
+===
+
+## 自带的 python2.7.5 已经够用
+
+ 1 安装python2.7.X(命令）
+
+
+	yum groupinstall -y 'development tools'
 	yum install -y zlib-devel bzip2-devel openssl-devel xz-libs wget
 	wget https://www.python.org/ftp/python/2.7.12/Python-2.7.12.tar.xz
-	xz -d Python-2.7.8.tar.xz  
-	tar -xvf Python-2.7.8.tar  
+	xz -d Python-2.7.12.tar.xz  
+	tar -xvf Python-2.7.12.tar  
 	cd Python-2.7.12
 	./configure --prefix=/usr/local
-	make  
- 	make altinstall
- 	验证 python2.7 -V
+	make && make altinstall
  
-2 安装setuptools （命令）
-
- 	2.1 wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-12.0.3.tar.gz#md5=f07e4b0f4c1c9368fcd980d888b29a65
- 	2.2 tar -zxvf setuptools-12.0.3.tar.gz
- 	2.3 cd setuptools=12.0.3
- 	2.4 python setup.py install
- 	2.5 验证是否安装成功 easy-install --help 
+ 验证 python2.7 -V
  
-3 安装pip
+## 不需要用到 easy_install 吧
 
-  	curl https://bootstrap.pypa.io/get-pip.py | python2.7 -
+ 2 安装setuptools （命令）
+
+ 	wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-12.0.3.tar.gz#md5=f07e4b0f4c1c9368fcd980d888b29a65
+ 	tar -zxvf setuptools-12.0.3.tar.gz
+ 	cd setuptools-12.0.3
+ 	python setup.py install
  
-4 安装python环境依赖
-
-	yum install python-devel
-
-5 安装aliyun相关sdk(core 和ecs)
-
- 	cd   xx/xx/lib  #切换至aliyunsdk存放目录
- 	pip install aliyun-python-sdk-core --target=.
- 	pip install aliyun-python-sdk-ecs --target=.
-	
+ 验证是否安装成功 easy_install --help 

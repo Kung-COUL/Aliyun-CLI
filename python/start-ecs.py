@@ -1,8 +1,8 @@
 #coding=utf-8
 #!/usr/bin/env python
 
-from aliyunsdkcore import client
-from aliyunsdkecs.request.v20140526 import StartInstanceRequest
+from lib.aliyunsdkcore import client
+from lib.aliyunsdkecs.request.v20140526 import StartInstanceRequest
 import PropertiesUtils as p
 
 clt = client.AcsClient(p.accessKeyId(), p.accessSecret(), p.regionId())
