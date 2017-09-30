@@ -17,28 +17,28 @@ Script
 Explaination
 ===
 
-install git to clone aliyun-cli from github
+1 install git to clone aliyun-cli from github
 
 	yum install git -y
 	git clone https://github.com/Kung-COUL/aliyun-cli  
 
-python-devel is needed for installing aliyun-python-sdk
+2 python-devel is needed for installing aliyun-python-sdk
 
 	yum install python-devel -y
 
-install aliyun-python-sdk
+3 install aliyun-python-sdk
 
 	cd ~/aliyun-cli/python  
 	pip install aliyun-python-sdk-core --target=lib  
  	pip install aliyun-python-sdk-ecs --target=lib  
 	touch lib/__init__.py 
 	
-Commented out lib/aliyunsdkcore/client.py line 184 to 187, remove warning, make bak file client.py.bak
+4 Commented out lib/aliyunsdkcore/client.py line 184 to 187, remove warning, make bak file client.py.bak
 
 	sed -i.bak -e '184,187d' lib/aliyunsdkcore/client.py  
 	sed -i.bak -e '281,283d' lib/aliyunsdkcore/client.py
 	
-touch properties.json
+5 touch properties.json
 
 	touch properties.json  
 	vi properties.json
