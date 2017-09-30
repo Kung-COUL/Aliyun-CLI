@@ -25,7 +25,6 @@
 	sed -i.bak -e '281,283d' lib/aliyunsdkcore/client.py
   
 
-
 Script
 ===
 

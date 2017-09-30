@@ -2,4 +2,4 @@
 #coding=utf-8
 import stopEcs
 
-stopEcs.doIt()
+print stopEcs.doIt()
