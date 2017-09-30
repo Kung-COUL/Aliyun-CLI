@@ -3,8 +3,6 @@
 import stopEcs
 import reinitDisk
 import startEcs
-import diaDescribeInstanceAttribute
-import os
 import time
 
 
