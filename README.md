@@ -24,10 +24,11 @@
 5 Commented out lib/aliyunsdkcore/client.py line 184 to 187, make bak file client.py.bak
 
 	sed -i.bak -e '184,187d' lib/aliyunsdkcore/client.py
+	sed -i.bak -e '281,283d' lib/aliyunsdkcore/client.py
 
 
 
-# 一口气
+# script
 ---
 
 	yum install git -y
@@ -37,6 +38,7 @@
 	pip install aliyun-python-sdk-core --target=lib
  	pip install aliyun-python-sdk-ecs --target=lib
 	sed -i.bak -e '184,187d' lib/aliyunsdkcore/client.py
+	sed -i.bak -e '281,283d' lib/aliyunsdkcore/client.py
 	touch lib/__init__.py 
 	touch properties.json
 	vi properties.json
