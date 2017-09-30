@@ -4,6 +4,9 @@
 from lib.aliyunsdkcore import client
 from lib.aliyunsdkecs.request.v20140526 import StopInstanceRequest
 import PropertiesUtils as p
+import diaDescribeInstanceAttribute
+import time
+import json
 
 
 def doIt():
@@ -24,8 +27,21 @@ def doIt():
     response = clt.do_action_with_exception(request)
 
     # 输出结果
-    if __name__ == "__main__":
-        print response
+    print
+    print json.loads(response)
+    print "Stopping Server"
+
+    i = 1
+    while True:
+        status = diaDescribeInstanceAttribute.status()
+
+        if status != 'Stopped':
+            print 'Stopping... ' + str(i)
+            i += 1
+            time.sleep(1)
+        else:
+            print 'Stopped'
+            break
 
 
 if __name__ == "__main__":

@@ -2,6 +2,9 @@ import json
 with open('properties.json') as json_data:
     data = json.load(json_data)
 
+    def pingTarget():
+        return data['PingTarget']
+
     def keyPairName():
         return data['KeyPairName']
 
