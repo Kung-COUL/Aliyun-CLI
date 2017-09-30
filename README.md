@@ -1,31 +1,3 @@
-1 install git to clone aliyun-cli from github
-	
-	yum install git -y
-	git clone https://github.com/Kung-COUL/aliyun-cli
- 
-2 安装python环境依赖
-
-	yum install python-devel -y
-
-3 安装aliyun相关sdk(core 和ecs)
-
-	cd ~/aliyun-cli/python
-	pip install aliyun-python-sdk-core --target=lib
- 	pip install aliyun-python-sdk-ecs --target=lib
-	touch lib/__init__.py
-	
-4 touch properties.json
-
-	touch properties.json
-	vi properties.json
-
-5 Commented out lib/aliyunsdkcore/client.py line 184 to 187, make bak file client.py.bak
-
-	sed -i.bak -e '184,187d' lib/aliyunsdkcore/client.py
-	sed -i.bak -e '281,283d' lib/aliyunsdkcore/client.py
-  
-
-
 Script
 ===
 
@@ -39,6 +11,36 @@ Script
 	sed -i.bak -e '281,283d' lib/aliyunsdkcore/client.py
 	touch lib/__init__.py 
 	touch properties.json
+	vi properties.json
+
+
+Explaination
+===
+
+1. install git to clone aliyun-cli from github
+	
+	yum install git -y
+	git clone https://github.com/Kung-COUL/aliyun-cli  
+ 
+0. python-devel is needed for installing aliyun-python-sdk
+	
+	yum install python-devel -y
+
+0. install aliyun-python-sdk
+
+	cd ~/aliyun-cli/python  
+	pip install aliyun-python-sdk-core --target=lib  
+ 	pip install aliyun-python-sdk-ecs --target=lib  
+	touch lib/__init__.py 
+	
+0. Commented out lib/aliyunsdkcore/client.py line 184 to 187, remove warning, make bak file client.py.bak
+
+	sed -i.bak -e '184,187d' lib/aliyunsdkcore/client.py  
+	sed -i.bak -e '281,283d' lib/aliyunsdkcore/client.py
+	
+0. touch properties.json
+
+	touch properties.json  
 	vi properties.json
 
 
