@@ -17,13 +17,13 @@ request.set_accept_format('json')
 response = clt.do_action(request)
 
 # 输出结果
-imageDict = json.loads(response)['Images']['Image']
-totalCount = len(imageDict)
+images = json.loads(response)['Images']['Image']
+totalCount = len(images)
 
 print totalCount
 print
 
 for i in range(totalCount):
-    print json.dumps(imageDict[i]['ImageId'], indent=2)
+    print json.dumps(images[i]['ImageId'], indent=2)
 
 print

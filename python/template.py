@@ -1,9 +1,9 @@
 
-#coding=utf-8
+# coding=utf-8
 #!/usr/bin/env python
 
-from aliyunsdkcore import client
-from aliyunsdkecs.request.v20140526 import DescribeKeyPairsRequest
+from lib.aliyunsdkcore import client
+from lib.aliyunsdkecs.request.v20140526 import DescribeKeyPairsRequest
 import PropertiesUtils as p
 import json
 
