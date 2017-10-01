@@ -20,9 +20,6 @@ response = clt.do_action(request)
 images = json.loads(response)['Images']['Image']
 totalCount = len(images)
 
-print totalCount
-print
-
 for i in range(totalCount):
     print json.dumps(images[i]['ImageId'], indent=2)
 

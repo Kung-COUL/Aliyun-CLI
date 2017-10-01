@@ -7,24 +7,33 @@ from lib.aliyunsdkecs.request.v20140526 import DescribeSnapshotsRequest
 import PropertiesUtils as p
 import json
 
-clt = client.AcsClient(p.accessKeyId(), p.accessSecret(), p.regionId())
 
-# 设置参数
-request = DescribeSnapshotsRequest.DescribeSnapshotsRequest()
-request.set_accept_format('json')
+def doIt():
 
-# 发起请求
-response = clt.do_action(request)
+    clt = client.AcsClient(p.accessKeyId(), p.accessSecret(), p.regionId())
 
-# 输出结果
-snapshots = json.loads(response)['Snapshots']['Snapshot']
-totalCount = len(snapshots)
+    # 设置参数
+    request = DescribeSnapshotsRequest.DescribeSnapshotsRequest()
+    request.set_accept_format('json')
 
-for i in range(totalCount):
-    # print
-    print json.dumps(snapshots[i]['SnapshotName'])
-    # print json.dumps(snapshots[i]['SnapshotId'])
-    # print json.dumps(snapshots[i]['SourceDiskId'])
-    # print
+    # 发起请求
+    response = clt.do_action(request)
 
-# print json.dumps(json.loads(response), indent=2)
+    # 输出结果
+    snapshots = json.loads(response)['Snapshots']['Snapshot']
+    totalCount = len(snapshots)
+
+    for i in range(totalCount):
+        snapshotName = snapshots[i]['SnapshotName']
+
+        if (snapshotName != '') and not (str(snapshotName).startswith('auto')):
+            print json.dumps(snapshots[i]['SnapshotName'])
+            print json.dumps(snapshots[i]['SnapshotId'])
+            # print json.dumps(snapshots[i]['SourceDiskId'])
+            print
+
+            # print json.dumps(json.loads(response), indent=2)
+
+
+if __name__ == "__main__":
+    doIt()

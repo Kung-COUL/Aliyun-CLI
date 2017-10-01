@@ -5,6 +5,9 @@ with open('properties.json') as json_data:
     def pingTarget():
         return data['PingTarget']
 
+    def snapshotId():
+        return data['SnapshotId']
+
     def keyPairName():
         return data['KeyPairName']
 
