@@ -6,6 +6,9 @@ from lib.aliyunsdkcore import client
 from lib.aliyunsdkecs.request.v20140526 import ResetDiskRequest
 import PropertiesUtils as p
 import json
+import stopEcs
+import startEcs
+import time
 
 
 def doIt():
@@ -27,4 +30,8 @@ def doIt():
 
 
 if __name__ == "__main__":
+    stopEcs.doIt()
+    time.sleep(2)
     doIt()
+    time.sleep(2)
+    startEcs.doIt()
