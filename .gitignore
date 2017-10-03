@@ -1,2 +1,7 @@
 lib
 *.json
+/.settings
+/.project
+/.pydevproject
+*.pyc
+*.sh

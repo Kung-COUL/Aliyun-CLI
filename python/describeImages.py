@@ -3,21 +3,24 @@
 #!/usr/bin/env python
 
 from lib.aliyunsdkcore import client
-from lib.aliyunsdkecs.request.v20140526 import ReInitDiskRequest
+from lib.aliyunsdkecs.request.v20140526 import DescribeImagesRequest
 import PropertiesUtils as p
 import json
 
 clt = client.AcsClient(p.accessKeyId(), p.accessSecret(), p.regionId())
 
 # 设置参数
-request = ReInitDiskRequest.ReInitDiskRequest()
+request = DescribeImagesRequest.DescribeImagesRequest()
 request.set_accept_format('json')
-
-request.add_query_param('DiskId', p.diskId())
-
 
 # 发起请求
 response = clt.do_action(request)
 
 # 输出结果
-print json.dumps(json.loads(response), indent=2)
+images = json.loads(response)['Images']['Image']
+totalCount = len(images)
+
+for i in range(totalCount):
+    print json.dumps(images[i]['ImageId'], indent=2)
+
+print

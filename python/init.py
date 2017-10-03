@@ -1,7 +1,17 @@
-stop - ecs.py
-reinit - disk.py
-start - ecs.py
+#!/usr/bin/env python
+# coding=utf-8
+import stopEcs
+import reinitDisk
+import startEcs
+import time
 
-侦测 init.coul.com
 
-dia - describe - instance - attribute.py
+stopEcs.doIt()
+
+time.sleep(2)
+
+reinitDisk.doIt()
+
+time.sleep(2)
+
+startEcs.doIt()
