@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-from lib.aliyunsdkcore import client
-from lib.aliyunsdkecs.request.v20140526 import StopInstanceRequest
+import sys
+sys.path.append("lib") 
+from aliyunsdkcore import client
+from aliyunsdkecs.request.v20140526 import StopInstanceRequest
 import PropertiesUtils as p
 import diaDescribeInstanceAttribute
 import time
